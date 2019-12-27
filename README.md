@@ -50,4 +50,4 @@ From now on, each time you update the queries using the `Flask` form, the stream
 I opened this repository primarily for tracking code changes.
 I think many developers out there have similar use cases, so I have made the repository to publicly available.
 
-Any contribution is welcome, but I cannot guarantee prompt review of issues and PRs.
+Any contribution is welcome, but I cannot guarantee prompt review of issues and PRs. It's WTFPL license, so you can do what the f\*\*k you want with it. Just don't destroy the world.
