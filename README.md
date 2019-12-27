@@ -15,7 +15,7 @@ I may want to
 
 Instead of working on dumped files or a database, it's much more flexible to have a flatten pipeline with `redis` server in the middle as buffer
 
-Another picture here. 
+ ![Image of Tweet-Redis](/tweet_redis.png)
 
 Now all of the above can be one process/container connecting to the `redis` server.
 You get the idea ;)
