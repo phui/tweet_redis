@@ -1,6 +1,6 @@
 # Tweet-Redis
 
-Tweet-Redis is a Python package that streams twitter into a redis channel.
+Tweet-Redis is a multi-container application that streams twitter into a redis channel.
 
 `Redis` supports the publish/subscribe protocol, which allows multiple consumer applications down the pipeline of data collection pipeline.
 
