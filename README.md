@@ -1,5 +1,7 @@
 # Tweet-Redis
 
+![](/img/tweet_redis.png)
+
 Tweet-Redis is a multi-container application that streams twitter into a redis channel.
 
 `Redis` supports the publish/subscribe protocol, which allows multiple consumer applications down the pipeline of data collection pipeline.
@@ -13,12 +15,8 @@ I may want to
 - index some information and put them in a SQL database, which is more accessible for analysis than the raw dumps.
 - download all the pictures to build the largest cat picture collection on Earth. 
 
-Instead of working on dumped files or a database, it's much more flexible to have a flatten pipeline with `redis` server in the middle as buffer
-
-Another picture here. 
-
+Instead of working on dumped files or a database, it's much more flexible to have a flatten pipeline with `redis` server in the middle as buffer.
 Now all of the above can be one process/container connecting to the `redis` server.
-You get the idea ;)
 
 # Architecture
 
@@ -41,9 +39,9 @@ Simple as that.
 Now you can go to the `Flask` form at `http://0.0.0.0:5000` with your browser and fill in the queries and keys.
 Once you hit submit, the streamer process will starts to pulbish the collected tweets to the `redis` server.
 
-From now on, each time you update the queries using the `Flask` form, the streamer process will restart immediately.
+![](/img/flask_form.png)
 
-# Advantages and Disadvantages
+From now on, each time you update the queries using the `Flask` form, the streamer process will restart immediately.
 
 # Contribution
 
