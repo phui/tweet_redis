@@ -6,19 +6,18 @@ Tweet-Redis is a Python package that streams twitter into a redis channel.
 
 In my work, I have found this a common pattern.
 For example, I am collecting tweets that contains the word "cat".
-First, I would like to dump hourly backup of all the collected tweets to a data server.
-But I also want to have a dashboard provding some info-graphics about the cat discussion on Twitter during the last hour.
-Maybe I also want to index some information and put them in a SQL database, which is more accessible for analysis than the raw dumps.
-And then a colleague overhead me talking about cute cat pictures I collected, and suggest we download all the pictures to build the largest cat picture collection on Earth.
+I may want to
 
-Instead of having a super long pipeline
+- dump hourly backup of all the collected tweets to a data server.
+- build a dashboard provding some info-graphics about the cat discussion on Twitter during the last hour.
+- index some information and put them in a SQL database, which is more accessible for analysis than the raw dumps.
+- download all the pictures to build the largest cat picture collection on Earth. 
 
-A picture here.
-
-It's much more flexible to have a flatten pipeline
+Instead of working on dumped files or a database, it's much more flexible to have a flatten pipeline with `redis` server in the middle as buffer
 
 Another picture here. 
 
+Now all of the above can be one process/container connecting to the `redis` server.
 You get the idea ;)
 
 # Architecture
@@ -43,3 +42,12 @@ Now you can go to the `Flask` form at `http://0.0.0.0:5000` with your browser an
 Once you hit submit, the streamer process will starts to pulbish the collected tweets to the `redis` server.
 
 From now on, each time you update the queries using the `Flask` form, the streamer process will restart immediately.
+
+# Advantages and Disadvantages
+
+# Contribution
+
+I opened this repository primarily for tracking code changes.
+I think many developers out there have similar use cases, so I have made the repository to publicly available.
+
+Any contribution is welcome, but I cannot guarantee prompt review of issues and PRs.
