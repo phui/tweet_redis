@@ -1,0 +1,56 @@
+<title>Tweet Redis</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="container">
+<h2>Tweet Redis Management Console</h2>
+<form action="" method="post" role="form">
+    {{ form.csrf_token }}
+
+    {% if form.csrf_token.errors %}
+        <div class="warning">You have submitted an invalid CSRF token</div>
+    {% endif %}
+
+    <div class="form-group">
+
+        <label for="track">Track:</label>
+        <input type="text" class="form-control" id="track" name="track"
+                placeholder="kitty,cat,hello kitty,cats,@kittyHello"
+                value="{{form.track.data}}">
+
+        <label for="follow">Follow:</label>
+        <input type="text" class="form-control" id="follow" name="follow"
+                placeholder="userid1,userid2,..."
+                value="{{form.follow.data}}">
+
+        <label for="locations">Locations:</label>
+        <input type="text" class="form-control" id="locations" name="locations"
+                placeholder="e.g. -74,40,-73,41 for NYC"
+                value="{{form.locations.data}}">
+
+        <label for="consumer_api_key">Consumer API Key:</label>
+        <input type="text" class="form-control" id="consumer_api_key" name="consumer_api_key"
+                placeholder="Required"
+                value="{{form.consumer_api_key.data}}">
+
+        <label for="consumer_api_key_secret">Consumer API Key Secret:</label>
+        <input type="text" class="form-control" id="consumer_api_key_secret" name="consumer_api_key_secret"
+                placeholder="Required"
+                value="{{form.consumer_api_key_secret.data}}">
+
+        <label for="access_token">Access Token:</label>
+        <input type="text" class="form-control" id="access_token" name="access_token"
+                placeholder="Required"
+                value="{{form.access_token.data}}">
+
+        <label for="access_token_secret">Access Token Secret:</label>
+        <input type="text" class="form-control" id="access_token_secret" name="access_token_secret"
+                placeholder="Required"
+                value="{{form.access_token_secret.data}}">
+
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+</div>
+

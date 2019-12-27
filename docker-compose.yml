@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+    redis:
+        image: redis:5.0.6
+        restart: always
+        ports:
+            - "${TWEET_REDIS_RPORT}:6379"
+        networks:
+            - backend
+    crawler:
+        build:
+            context: .
+        restart: always
+        volumes:
+            - sqlitelog:/var/log/
+        ports:
+            - "${TWEET_REDIS_FPORT}:${TWEET_REDIS_FPORT}"
+        depends_on:
+            - redis
+        networks:
+            - backend
+        environment:
+            TWEET_REDIS_HOST: redis
+            TWEET_REDIS_RPORT: "${TWEET_REDIS_RPORT}"
+            TWEET_REDIS_FPORT: "${TWEET_REDIS_FPORT}"
+
+volumes:
+    sqlitelog:
+
+networks:
+    backend:
+        driver: bridge

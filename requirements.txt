@@ -1,0 +1,5 @@
+redis
+Flask
+twython
+wtforms
+flask_wtf
