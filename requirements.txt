@@ -3,3 +3,4 @@ Flask
 twython
 wtforms
 flask_wtf
+simplejson
